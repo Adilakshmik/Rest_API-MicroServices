@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: 50_Cloud_API_Gateway1
+  cloud:
+    gateway:
+      routes:
+      - id: welcome_api
+        uri: lb://WELCOME_API
+        predicates:
+      - Path=/welcome
+      - id: greet_api
+        uri: lb://GREET_API
+        predicates:
+      - Path=/greet
+      
+server:
+  port: 3333    
+        
+     
+        
+     
+        
